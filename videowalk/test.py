@@ -9,13 +9,13 @@ import torch
 import torch.nn as nn
 import torch.backends.cudnn as cudnn
 
-from model import CRW
+from videowalk.model import CRW
 
-from data import vos, jhmdb
-from data.video import SingleVideoDataset
+from videowalk.data import vos, jhmdb
+from videowalk.data.video import SingleVideoDataset
 
-import utils
-import utils.test_utils as test_utils
+import videowalk.utils as utils
+import videowalk.utils.test_utils as test_utils
 
 
 def main(args, vis):

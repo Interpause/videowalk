@@ -7,9 +7,9 @@ import errno
 import os
 import sys
 
-from . import arguments
-from . import visualize
-from . import augs
+import videowalk.utils.arguments as arguments
+import videowalk.utils.visualize as visualize
+import videowalk.utils.augs as augs
 
 #########################################################
 # DEBUG
@@ -218,7 +218,7 @@ def mkdir(path):
 from torch import nn
 from torch.nn import functional as F
 from torchvision import transforms
-import resnet
+import videowalk.resnet as resnet
 
 def partial_load(pretrained_dict, model, skip_keys=[]):
     model_dict = model.state_dict()

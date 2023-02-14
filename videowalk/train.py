@@ -11,11 +11,11 @@ import torch.utils.data
 from torch.utils.data.dataloader import default_collate
 from torchvision.datasets.samplers.clip_sampler import RandomClipSampler, UniformClipSampler
 
-import data
-from data.kinetics import Kinetics400
-from data.video import VideoList
-from model import CRW
-import utils
+import videowalk.data as data
+from videowalk.data.kinetics import Kinetics400
+from videowalk.data.video import VideoList
+from videowalk.model import CRW
+import videowalk.utils as utils
 
 
 def train_one_epoch(model, optimizer, lr_scheduler, data_loader, device, epoch, print_freq,

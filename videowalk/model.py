@@ -4,7 +4,7 @@ import torch.nn.functional as F
 import torchvision
 
 import numpy as np
-import utils
+import videowalk.utils as utils
 
 EPS = 1e-20
 

@@ -2,7 +2,7 @@ import argparse
 import os
 import torch
 import random
-import utils
+import videowalk.utils as utils
 
 def common_args(parser):
     return parser

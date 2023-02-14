@@ -6,7 +6,7 @@ import kornia
 import kornia.augmentation as K
 
 import numpy as np
-import augs
+import videowalk.utils.augs as augs
 
 IMG_MEAN = augs.IMG_MEAN
 IMG_STD  = augs.IMG_STD

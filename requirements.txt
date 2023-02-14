@@ -1,0 +1,12 @@
+torch
+torchvision
+pyav
+opencv-contrib-python
+matplotlib
+scikit-image
+imageio
+
+# visualization
+wandb
+visdom
+scikit-learn
