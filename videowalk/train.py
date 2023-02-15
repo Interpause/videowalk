@@ -17,6 +17,15 @@ from videowalk.data.video import VideoList
 from videowalk.model import CRW
 import videowalk.utils as utils
 
+class MapVideoTransform:
+    """Map transform over THWC tensor."""
+
+    def __init__(self, transform):
+        self.transform = transform
+
+    def __call__(self, video):
+        print(video.shape)
+        return torch.stack([self.transform(frame) for frame in video])
 
 def train_one_epoch(model, optimizer, lr_scheduler, data_loader, device, epoch, print_freq,
     vis=None, checkpoint_fn=None):
@@ -113,7 +122,7 @@ def main(args):
 
     if args.cache_dataset and os.path.exists(cache_path):
         print("Loading dataset_train from {}".format(cache_path))
-        dataset, _ = torch.load(cache_path)
+        dataset = torch.load(cache_path)
         cached = dict(video_paths=dataset.video_clips.video_paths,
                 video_fps=dataset.video_clips.video_fps,
                 video_pts=dataset.video_clips.video_pts)
@@ -127,8 +136,8 @@ def main(args):
             dataset.transform = None
             torch.save((dataset, traindir), cache_path)
     
-    if hasattr(dataset, 'video_clips'):
-        dataset.video_clips.compute_clips(args.clip_len, 1, frame_rate=args.frame_skip)
+    # if hasattr(dataset, 'video_clips'):
+    #     dataset.video_clips.compute_clips(args.clip_len, 1, frame_rate=args.frame_skip)
         
     print("Took", time.time() - st)
 

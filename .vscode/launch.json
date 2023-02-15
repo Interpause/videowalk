@@ -1,0 +1,33 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Current File",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "env": {
+        "PYTHONPATH": "${env:PYTHONPATH}:/home/jovyan/workspaces/videowalk"
+      },
+      "args": [
+        "--data-path",
+        "/home/jovyan/downloads/kinetics400",
+        "--clip-len",
+        "8",
+        "--clips-per-video",
+        "1",
+        "--model-type",
+        "resnet18",
+        "--workers",
+        "16",
+        "--batch-size",
+        "1",
+        "--cache-dataset",
+        "--data-parallel"
+      ],
+      "purpose": ["debug-in-terminal"]
+    }
+  ]
+}
