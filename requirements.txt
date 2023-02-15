@@ -1,10 +1,11 @@
 torch
 torchvision
 pyav
-opencv-contrib-python
+opencv-contrib-python-headless
 matplotlib
 scikit-image
 imageio
+tqdm
 
 # visualization
 wandb
