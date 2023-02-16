@@ -1,6 +1,6 @@
 torch
 torchvision
-pyav
+av
 opencv-contrib-python-headless
 matplotlib
 scikit-image
